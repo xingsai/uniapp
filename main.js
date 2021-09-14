@@ -11,8 +11,6 @@ import {RouterMount} from './plugin/uni-simple-router/index.js'
 // 注册缓存器
 Vue.use(MinCache,{timeout: 6})
 
-
-
 // store
 Vue.prototype.$store=store;
 // tip
