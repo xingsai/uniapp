@@ -5,6 +5,7 @@
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
+					console.log(e)
 					
 					// #ifdef APP-PLUS
 					// 检测升级

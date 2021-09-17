@@ -1,5 +1,13 @@
 const routes = [
 	{
+	    //注意：path必须跟pages.json中的地址对应，最前面别忘了加'/'哦
+	  path: '/pages/index/index',
+	  name: 'index',
+	    meta: {
+	        title: '主页',
+	    },
+	},
+	{
 	 path: "/pages/login/login",
 	 name: 'login',
 		 meta: {
@@ -7,13 +15,13 @@ const routes = [
 		 },
 	},
 	{
-        //注意：path必须跟pages.json中的地址对应，最前面别忘了加'/'哦
-      path: '/pages/index/index',
-      name: 'index',
-        meta: {
-	        title: '主页',
-	    },
-    },
+		"path": "/pages/site/site",
+		name: 'site',
+				 meta: {
+					 title: '登录',
+				 },
+	},
+	
 	{
 	    //注意：path必须跟pages.json中的地址对应，最前面别忘了加'/'哦
 	  path: '/pages/home/home',

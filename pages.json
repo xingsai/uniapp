@@ -3,174 +3,96 @@
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/layout",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/background",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/text",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/icon",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/button",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/design",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/tag",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/avatar",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/progress",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/shadow",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/loading",
-			"style": {}
-		},
-		{
-			"path": "pages/component/bar",
-			"style": {}
-		},
-		{
-			"path": "pages/component/nav",
-			"style": {}
-		},
-		{
-			"path": "pages/component/list",
-			"style": {}
-		},
-		{
-			"path": "pages/component/card",
-			"style": {}
-		},
-		{
-			"path": "pages/component/form",
-			"style": {}
-		},
-		{
-			"path": "pages/component/timeline",
-			"style": {}
-		},
-		{
-			"path": "pages/component/chat",
-			"style": {}
-		},
-		{
-			"path": "pages/component/swiper",
-			"style": {}
-		},
-		{
-			"path": "pages/component/modal",
-			"style": {}
-		},
-		{
-			"path": "pages/component/steps",
+			"aliasPath": "/", //对于h5端你必须在首页加上aliasPath并设置为/
 			"style": {}
 		}, {
-			"path": "pages/plugin/indexes",
-			"style": {}
-		}, {
-			"path": "pages/plugin/animation",
-			"style": {}
-		}, {
-			"path": "pages/plugin/drawer",
-			"style": {}
-		}, {
-			"path": "pages/plugin/verticalnav",
-			"style": {}
-		}, {
-			"path": "pages/home/home",
-			"style": {}
-		}, {
-			"path": "pages/login/login",
-			"style": {}
-		}, {
-			"path": "pages/user/userexit",
-			"style": {}
-		}, {
-			"path": "pages/user/userdetail",
-			"style": {}
-		},{
-			"path": "pages/user/useredit",
+			"path": "pages/site/site",
 			"style": {}
 		}, {
 			"path": "pages/user/people",
 			"style": {}
-		}, {
-			"path": "pages/common/exit",
-			"style": {}
-		}, {
-			"path": "pages/common/success",
-			"style": {}
-		},{
-			"path": "pages/user/location",
-			"style": {},
-			"permission": {
-				"scope.userLocation": {
-				  "desc": "你的位置信息将用于小程序位置接口的效果展示" // 高速公路行驶持续后台定位
-				}
-			  }
-		},{
-			"path": "pages/addressbook/address-book",
-			"style": {}
-		},{
-			"path": "pages/addressbook/level-address-book",
-			"style": {}
-		},
-		{
-			"path": "pages/addressbook/member",
-			"style": {}
-		},{
-			"path": "pages/addressbook/address-detail",
-			"style": {}
-		},{
-			"path": "pages/annotation/annotationList",
-			"style": {
-				"app-plus" : {
-					"bounce" : "none" //删除此项: mescroll-body支持iOS回弹
-				}
-			}
-		},{
-			"path": "pages/annotation/annotationDetail",
-			"style": {}
-		},{
-			"path": "pages/common/helloWorld",
-			"style": {}
 		}
 		
-	],
+		// {
+		// 	"path": "pages/user/userexit",
+		// 	"style": {}
+		// }, {
+		// 	"path": "pages/user/userdetail",
+		// 	"style": {}
+		// },{
+		// 	"path": "pages/user/useredit",
+		// 	"style": {}
+		// }
+	
+		
+	
+    ],
+	// "subPackages": [{
+	// 		"root": "pages/user",
+	// 		"pages": [
+	// 			{
+	// 				"path": "userdetail"
+					
+	// 			}
+	// 			]
+	// 	},
+	// 	{
+	// 			"root": "pages/site",
+	// 			"pages": [{
+	// 					"path": "code"
+						
+						
+	// 				}
+	// 				]
+	// 		}
+	 
+	// 	],
+	// 	"preloadRule": {
+	// 		"pages/index/index": {
+	// 			"network": "all",
+	// 			"packages": ["pages/user", "pages/site"
+				
+	// 			]
+	// 		}
+	// 	},
+	
 	"globalStyle": {
 		"mp-alipay": {
 			/* 支付宝小程序特有相关 */
 			"transparentTitle": "always",
 			"allowsBounceVertical": "NO"
 		},
+		
 		"navigationBarBackgroundColor": "#0081ff",
 		"navigationBarTitleText": "JEECG BOOT",
 		"navigationStyle": "custom",
 		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#a8700d",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "患者",
+				"iconPath": "static/images/tabbar/tabbar_home.png",
+				"selectedIconPath": "/static/images/tabbar/tabbar_home1.png"
+			},
+			
+			{
+				"pagePath": "pages/site/site",
+				"text": "站点",
+				"iconPath": "static/images/tabbar/tabbar_cart.png",
+				"selectedIconPath": "/static/images/tabbar/tabbar_cart1.png"
+			},
+			{
+				"pagePath": "pages/user/people",
+				"text": "我的",
+				"iconPath": "static/images/tabbar/tabbar_personal.png",
+				"selectedIconPath": "/static/images/tabbar/tabbar_personal1.png"
+			}
+		]
 	},
 	"usingComponts": true,
 	"condition": { //模式配置，仅开发期间生效

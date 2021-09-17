@@ -8,6 +8,7 @@ import configService from'./common/service/config.service.js'
 import router from './common/router'
 import {RouterMount} from './plugin/uni-simple-router/index.js'
 
+
 // 注册缓存器
 Vue.use(MinCache,{timeout: 6})
 
@@ -22,8 +23,7 @@ Vue.prototype.$config=configService;
 import { http } from '@/common/service/service.js' 
 Vue.prototype.$http = http
 
-import home from './pages/home/home.vue'
-Vue.component('home',home)
+
 
 
 import people from './pages/user/people.vue'
@@ -42,14 +42,9 @@ Vue.component('myPage',myPage)
 
 
 
-import basics from './pages/basics/home.vue'
-Vue.component('basics',basics)
 
-import components from './pages/component/home.vue'
-Vue.component('components',components)
 
-import plugin from './pages/plugin/home.vue'
-Vue.component('plugin',plugin)
+
 
 import cuCustom from './plugin/colorui/components/cu-custom.vue'
 Vue.component('cu-custom',cuCustom)
@@ -67,6 +62,7 @@ const app = new Vue({
 	MinCache,
     ...App
 })
+//v1.3.5起 H5端 你应该去除原有的app.$mount();使用路由自带的渲染方式
 //v1.3.5起 H5端 你应该去除原有的app.$mount();使用路由自带的渲染方式
 // #ifdef H5
 	RouterMount(app,'#app');

@@ -1,59 +1,22 @@
 <template>
 	<view>
+		<cu-custom :bgColor="NavBarColor" :isBack="false" backRouterName="index">
+			<block slot="content">我的</block>
+		</cu-custom>
 		<scroll-view scroll-y class="page">
-			  <!-- 头部logo-->
-		  <view class="UCenter-bg">
-		    <image :src="personalList.avatar" class="png round animation-slide-right margin-bottom-sm" mode="scaleToFill" :style="[{animationDelay: '0.1s'}]"></image>
-		    <image src="https://static.jeecg.com/upload/test/wave_1595818053612.gif" mode="scaleToFill" class="gif-wave"></image>
-		  </view>
-		  <view class="padding flex text-center text-grey bg-white shadow-warp">
-		    <view class="flex flex-sub flex-direction solid-right animation-slide-top" :style="[{animationDelay: '0.2s'}]">
-		      <view class="text-xl text-orange">{{personalList.username}}</view>
-			  <view class="margin-top-sm"><text class="cuIcon-people"></text> 用户</view>
-		    </view>
-		    
-		    <view class="flex flex-sub flex-direction animation-slide-top" :style="[{animationDelay: '0.2s'}]">
-		      <view class="text-xl text-green">{{personalList.post?personalList.post:'员工'}}</view>
-		      <view class="margin-top-sm"><text class="cuIcon-news"></text> 职务</view>
-		    </view>
-		  </view>
 		  <!-- 列表list-->
-		  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-		    <view class="cu-item arrow animation-slide-bottom" :style="[{animationDelay: '0.1s'}]">
-		      <view class="content" >
-		        <text class="cuIcon-favorfill text-yellow"></text>
-		        <text class="text-grey">收藏</text>
-		      </view>
-		    </view>
-		    <view class="cu-item arrow animation-slide-bottom" :style="[{animationDelay: '0.2s'}]">
-		      <view class="content">
-		        <text class="cuIcon-redpacket_fill text-red"></text>
-		        <text class="text-grey">红包</text>
-		      </view>
-		    </view>
-			<view class="cu-item arrow animation-slide-bottom" :style="[{animationDelay: '0.3s'}]" @tap="scan">
-			  <view class="content">
-			    <text class="cuIcon-scan text-red"></text>
-			    <text class="text-grey">扫码</text>
-			  </view>
-			</view>
-			<navigator class="cu-item arrow animation-slide-bottom" :style="[{animationDelay: '0.4s'}]" url="/pages/user/location" hover-class="none">
+		  <view class="">
+		
+			<navigator class="cu-item arrow animation-slide-bottom" :style="[{animationDelay: '0.7s'}]" url="/pages/user/userdetail" hover-class="none">
 				<view class="content" >
-				    <text class="cuIcon-location text-cyan"></text>
-					<text class="text-grey">定位</text>
-				</view>
-			</navigator>
-			<navigator class="cu-item arrow animation-slide-bottom" url="/pages/user/userdetail" :style="[{animationDelay: '0.6s'}]">
-			     <view class="content">
-				    <text class="cuIcon-settingsfill text-cyan"></text>
-					<text class="text-grey">设置</text>
-			    </view>
-			</navigator>
-		   
-			<navigator class="cu-item arrow animation-slide-bottom" :style="[{animationDelay: '0.7s'}]" url="/pages/user/userexit" hover-class="none">
-				<view class="content" >
-				    <text class="cuIcon-exit text-cyan"></text>
-					<text class="text-grey">退出</text>
+				  <view class="action">
+				  	<view class="cu-avatar" :style="{backgroundImage: 'url(' + personalMsg.avatar + ')'}"></view>
+				  </view>
+				  <view>
+					  <view>{{personalMsg.name}}</view>
+					  <view>{{personalMsg.position}}</view>
+					  <view>{{personalMsg.mail}}</view>
+				  </view>
 				</view>
 			</navigator>
 		  </view>
@@ -68,18 +31,12 @@
 		name: "people",
 		data() {
 			return {
-				personalList:{
-				  avatar:'',
-				  realname:'',
-				  username:'',
-				  post:''
+				personalMsg:{
+					name:'小明',
+					position:'主治医师',
+					mail:'1035098933@qq.com',
+					avatar:'http://caredev.schillerchina.com/static/img/avatar.d7282e5a.png?imageView2/1/w/80/h/80'
 				},
-				  positionUrl:'/sys/position/list',
-				  departUrl:'/sys/user/userDepartList',
-				  userUrl:'/sys/user/queryById',
-				  postUrl:'/sys/position/queryByCode',
-				  userId:'',
-				  id:''
 			};
 		},
 		watch: {

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="cu-custom" :style="[{height:CustomBar + 'px'}]">
+		<view class="cu-custom" :style="[{height:CustomBar + 'px',zIndex:zIndex}]">
 			<view class="cu-bar fixed" :style="style" :class="[bgImage!=''?'none-bg text-white bg-img':'',bgColor]">
 				<view class="action" @tap="BackPage" v-if="isBack">
 					<text class="cuIcon-back"></text>
@@ -51,12 +51,24 @@
 				type: String,
 				default: ''
 			},
+			zIndex:{
+				type: String,
+				default: '10'
+			},
+			backRouterName:{
+				type: String,
+				default: ''
+			}
 		},
 		methods: {
 			BackPage() {
-				uni.navigateBack({
-					delta: 1
-				});
+				if(!this.backRouterName){
+					uni.navigateBack({
+						delta: 1
+					});	
+				}else{
+					this.$Router.replace({name:this.backRouterName})
+				}
 			}
 		}
 	}
