@@ -24,11 +24,20 @@ const routes = [
 	
 	{
 	    //注意：path必须跟pages.json中的地址对应，最前面别忘了加'/'哦
-	  path: '/pages/home/home',
+	  path: '/pages/site/qrcode',
 	  //aliasPath:'/',  //对于h5端你必须在首页加上aliasPath并设置为/
-	  name: 'home',
+	  name: 'qrcode',
 	    meta: {
-	        title: '首页',
+	        title: '二维码',
+	    },
+	},
+	{
+	    //注意：path必须跟pages.json中的地址对应，最前面别忘了加'/'哦
+	  path: '/pages/patient/patientDetail',
+	  //aliasPath:'/',  //对于h5端你必须在首页加上aliasPath并设置为/
+	  name: 'patientDetail',
+	    meta: {
+	        title: '患者详情',
 	    },
 	},
     {

@@ -41,7 +41,11 @@ const MescrollMixin = {
 		// 下拉刷新的回调
 		downCallback() {
 			// mixin默认resetUpScroll
-			this.mescroll.resetUpScroll()
+			//this.mescroll.resetUpScroll()
+			setTimeout(()=>{
+				this.mescroll.endErr();
+				
+			}, 500)
 		},
 		// 上拉加载的回调
 		upCallback() {

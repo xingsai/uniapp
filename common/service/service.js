@@ -41,7 +41,7 @@ http.validateStatus = (statusCode) => {
 http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
   config.header = {
     ...config.header,
-     'X-Access-Token':getTokenStorage()
+	  'Authorization' :'Bearer ' + getTokenStorage()
   }
   /*
   if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
@@ -52,12 +52,7 @@ http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 })
 
 // 必须使用异步函数，注意
-http.interceptor.response(async (response) => { /* 请求之后拦截器 */
-  // if (response.data.code !== 200) { // 服务端返回的状态码不等于200，则reject()
-  //   return Promise.reject(response)
-  // }
-  return response
-}, (response) => {
+http.interceptor.response((response) => {
 	// 请求错误做点什么
   console.log("请求错误做点什么",response);
   if (response) {
@@ -65,7 +60,7 @@ http.interceptor.response(async (response) => { /* 请求之后拦截器 */
       const token = uni.getStorageSync(ACCESS_TOKEN)
       console.log("------异常响应------",token)
       console.log("------异常响应------",data.status)
-      switch (data.status) {
+      switch (data.status_code) {
         case 403:
           tip.error('拒绝访问');
           break
@@ -100,7 +95,7 @@ http.interceptor.response(async (response) => { /* 请求之后拦截器 */
           break
       }
     }
-  return response
+  return response.data
 })
 
 export {

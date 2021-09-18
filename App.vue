@@ -1,8 +1,12 @@
 <script>
 	import Vue from 'vue'
 	import appUpdate from 'common/util/appUpdate.js'
+	import {ACCESS_TOKEN} from '@/common/util/constants.js'
 	export default {
 		onLaunch: function() {
+			//临时写死token
+			uni.setStorageSync(ACCESS_TOKEN,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9jYXJlZGV2LnNjaGlsbGVyY2hpbmEuY29tXC9hcGlcL2VtcGxveWVlc1wvbG9naW4iLCJpYXQiOjE2MzE3Njg4NjAsImV4cCI6MTYzMjM3MzY2MCwibmJmIjoxNjMxNzY4ODYwLCJqdGkiOiJFUThpZzk0R1JHVDZxcjVxIiwic3ViIjo0LCJwcnYiOiJjODQwZWM5OGQ1YTcyZjkwMzQxMTQ3MTdkNWZhMWY1Zjg4ZmJlYzFmIn0.bW24dyqGuhfI8ovnQDBWrWJhDB9cNidO8ft2L6P7YOc');
+			
 			uni.getSystemInfo({
 				success: function(e) {
 					console.log(e)
@@ -283,4 +287,25 @@
 			transform: translateY(0px);
 		}
 	}
+	/* 超出显示... */
+	.textOverflow {
+	    word-break   : break-all;
+	    text-overflow: ellipsis;
+	    overflow     : hidden;
+	    white-space  : nowrap;
+	    min-width    : 0
+	}
+	
+	/* 超出两行显示... */
+	.textOverflow2 {
+	    text-overflow     : -o-ellipsis-lastline;
+	    overflow          : hidden;
+	    text-overflow     : ellipsis;
+	    display           : -webkit-box;
+	    -webkit-line-clamp: 2;
+	    /*! autoprefixer: off */
+	    line-clamp        : 2;
+	    -webkit-box-orient: vertical;
+	    word-break        : break-all;
+	  }
 </style>
